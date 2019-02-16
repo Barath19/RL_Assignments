@@ -2,6 +2,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 from random import uniform
 from random import randint
+import random
+from math import cos,sin,pi,log,sqrt
+
+def BoxMuller():
+    u1 = random.random()
+    u2 = random.random()
+    return (sqrt(-2*log(u1)))*cos(2*pi*u2)
 # number of arms
 n = 10
 # number of bandits
@@ -20,7 +27,7 @@ Qstar = np.zeros((bandits,n))
 #Fill the array with random numbers of a Gaussian normal distribution
 for i in range(n):
     for j in range(bandits):
-        Qstar[j][i] = np.random.normal(mean, variance)
+        Qstar[j][i] = BoxMuller()
 
 #Graphics setup
 figure = plt.figure()
