@@ -1,4 +1,3 @@
-#export LC_ALL=en_US.UTF-8
 import matplotlib.pyplot as plt
 import numpy as np
 from random import uniform
